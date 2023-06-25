@@ -10,6 +10,9 @@ import XCTest
 
 final class Restaurant_SearchTests: XCTestCase {
 
+    // TODO: API Key
+    private let apiKey = ""
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -18,19 +21,48 @@ final class Restaurant_SearchTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGourmetFetch() {
+        let urlString = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=sample&large_area=Z011"
+        let expectation = expectation(description: "Gourmet Fetched")
+        
+        guard let url = URL(string: urlString) else {
+            return
         }
+        
+        URLSession.shared.dataTask(with: url) { (data, result, error) in
+            if data != nil {
+                expectation.fulfill()
+            }
+        }.resume()
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func testGourmetSearch() {
+        if apiKey == "" { XCTAssertFalse(true); return }
+        let urlString = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(apiKey)&lat=34.67&lng=135.52&count=5&format=json"
+        let expectation = expectation(description: "Gourmet Fetched")
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, result, error) in
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let result = try decoder.decode(HPGourmetResults.self, from: data)
+                    if result.shops.count == 5 {
+                        expectation.fulfill()
+                    }
+                } catch {
+                    fatalError()
+                }
+            }
+        }.resume()
+        
+        wait(for: [expectation], timeout: 5)
     }
 
 }
