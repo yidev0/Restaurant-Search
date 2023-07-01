@@ -21,6 +21,7 @@ class SearchCollectionViewController: UICollectionViewController {
     private var gourmetSearch = HPGourmetSearch()
     var dataSource: UICollectionViewDiffableDataSource<Section, HPShop>!
     var locationManager = LocationManager.shared
+    var lastUpdatedLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +79,8 @@ class SearchCollectionViewController: UICollectionViewController {
         }
     }
     
-    func searchGourmet(at coordinate: CLLocationCoordinate2D) {
-        gourmetSearch.search(at: coordinate) { shops, error in
+    func searchGourmet(at coordinate: CLLocation) {
+        gourmetSearch.search(at: coordinate.coordinate) { shops, error in
             var snapshot = NSDiffableDataSourceSnapshot<Section, HPShop>()
             snapshot.appendSections([.main])
             
@@ -93,8 +94,9 @@ class SearchCollectionViewController: UICollectionViewController {
     }
     
     @objc func didUpdateLocation(_ notification: Notification) {
-        if let coordinate = notification.object as? CLLocationCoordinate2D {
-            searchGourmet(at: coordinate)
+        if let location = notification.object as? CLLocation {
+            searchGourmet(at: location)
+            lastUpdatedLocation = location
         }
     }
     

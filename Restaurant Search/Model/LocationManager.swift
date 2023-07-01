@@ -35,7 +35,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         if let location = locations.last {
             print("Location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
             currentLocation = location
-            NotificationCenter.default.post(name: Notification.Name("didUpdateLocation"), object: location.coordinate)
+            NotificationCenter.default.post(name: Notification.Name("didUpdateLocation"), object: location)
         }
     }
     
