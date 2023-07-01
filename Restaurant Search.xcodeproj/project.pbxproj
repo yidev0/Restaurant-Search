@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D19B14112A4EEFE90010F4DB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B14102A4EEFE90010F4DB /* LocationManager.swift */; };
 		D1C189E62A48232600864783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E52A48232600864783 /* AppDelegate.swift */; };
 		D1C189E82A48232600864783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E72A48232600864783 /* SceneDelegate.swift */; };
 		D1C189EA2A48232600864783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E92A48232600864783 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D19B14102A4EEFE90010F4DB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D1C189E22A48232600864783 /* Restaurant Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C189E52A48232600864783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C189E72A48232600864783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				D1C18A1A2A4830E000864783 /* HPGourmetResults.swift */,
 				D1C18A1C2A483F7500864783 /* HPGourmetShop.swift */,
 				D1C18A182A482E5100864783 /* HPShop.swift */,
+				D19B14102A4EEFE90010F4DB /* LocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			files = (
 				D1D800972A4ADA99002673C5 /* SearchCollectionViewController.swift in Sources */,
 				D1C189EA2A48232600864783 /* ViewController.swift in Sources */,
+				D19B14112A4EEFE90010F4DB /* LocationManager.swift in Sources */,
 				D1C18A192A482E5100864783 /* HPShop.swift in Sources */,
 				D1C189E62A48232600864783 /* AppDelegate.swift in Sources */,
 				D1D8009A2A4AE1A3002673C5 /* SearchCell.swift in Sources */,

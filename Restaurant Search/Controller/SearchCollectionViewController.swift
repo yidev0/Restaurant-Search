@@ -20,6 +20,7 @@ class SearchCollectionViewController: UICollectionViewController {
     private var searchController = UISearchController()
     private var gourmetSearch = HPGourmetSearch()
     var dataSource: UICollectionViewDiffableDataSource<Section, HPShop>!
+    var locationManager = LocationManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,19 @@ class SearchCollectionViewController: UICollectionViewController {
         self.navigationController?.navigationBar.sizeToFit()
         
         self.navigationItem.searchController = searchController
-        
+        initializeView()
+    }
+    
+    func initializeView() {
         configureCollectionView()
         configureDataSource()
-        loadData()
+        setupLocationManager()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateLocation), name: Notification.Name("didUpdateLocation"), object: locationManager.currentLocation)
+    }
+    
+    func setupLocationManager() {
+        locationManager.startUpdatingLocation()
     }
     
     func configureCollectionView() {
@@ -68,10 +78,8 @@ class SearchCollectionViewController: UICollectionViewController {
         }
     }
     
-    func loadData() {
-        // TODO: Apply current location
-        // temp: tokyo station
-        gourmetSearch.search(at: CLLocationCoordinate2D(latitude: 35.68204, longitude: 139.76468)) { shops, error in
+    func searchGourmet(at coordinate: CLLocationCoordinate2D) {
+        gourmetSearch.search(at: coordinate) { shops, error in
             var snapshot = NSDiffableDataSourceSnapshot<Section, HPShop>()
             snapshot.appendSections([.main])
             
@@ -81,6 +89,12 @@ class SearchCollectionViewController: UICollectionViewController {
             DispatchQueue.main.async {
                 self.dataSource.apply(snapshot, animatingDifferences: false)
             }
+        }
+    }
+    
+    @objc func didUpdateLocation(_ notification: Notification) {
+        if let coordinate = notification.object as? CLLocationCoordinate2D {
+            searchGourmet(at: coordinate)
         }
     }
     
