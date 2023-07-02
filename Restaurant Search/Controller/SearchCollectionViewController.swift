@@ -139,4 +139,19 @@ class SearchCollectionViewController: UICollectionViewController {
         }
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row < collectionView.numberOfItems(inSection: 0) {
+            performSegue(withIdentifier: "toDetail", sender: dataSource.itemIdentifier(for: indexPath))
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            if let destination = segue.destination as? RestaurantDetailViewController,
+               let shop = sender as? HPShop {
+                destination.hpShop = shop
+            }
+        }
+    }
+    
 }

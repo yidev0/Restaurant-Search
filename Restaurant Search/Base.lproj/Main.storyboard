@@ -56,7 +56,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="vj8-RS-rWg"/>
                     <connections>
-                        <segue destination="n44-3U-xZI" kind="show" id="VhK-BE-Zdy"/>
+                        <segue destination="n44-3U-xZI" kind="show" identifier="toDetail" id="VhK-BE-Zdy"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jt-K1-R2U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -23,8 +23,17 @@ class RestaurantDetailViewController: UIViewController {
     
     func setupLabels() {
         self.nameLabel.text = hpShop.name
+        self.nameLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+        self.nameLabel.numberOfLines = 0
+        
         self.addressLabel.text = hpShop.address
+        self.addressLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        self.addressLabel.numberOfLines = 0
+        
         self.hoursLabel.text = hpShop.open
+        self.hoursLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        self.hoursLabel.textColor = UIColor.secondaryLabel
+        self.hoursLabel.numberOfLines = 0
     }
 
 }
