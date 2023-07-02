@@ -35,7 +35,6 @@ class HPGourmetSearch {
             let base = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(apiKey)"
             return base + "&lat=\(coordiante.latitude)&lng=\(coordiante.longitude)" + "&range=\(range)" + "&count=5" + "&format=json"
         }
-        
         guard let url = URL(string: urlString) else {
             completion([], HPGourmetSearchError.notURL)
             return
