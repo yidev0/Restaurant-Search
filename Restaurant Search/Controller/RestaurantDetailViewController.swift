@@ -19,6 +19,7 @@ class RestaurantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabels()
+        setupImage()
     }
     
     func setupLabels() {
@@ -35,5 +36,20 @@ class RestaurantDetailViewController: UIViewController {
         self.hoursLabel.textColor = UIColor.secondaryLabel
         self.hoursLabel.numberOfLines = 0
     }
-
+    
+    func setupImage() {
+        if let url = hpShop.photo.mobile?.large {
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error { print(error.localizedDescription); return; }
+                
+                DispatchQueue.main.async {
+                    if let data = data, let image = UIImage(data: data) {
+                        self.thumbnailImage.image = image
+                    }
+                }
+            }.resume()
+        }
+    }
+    
 }
