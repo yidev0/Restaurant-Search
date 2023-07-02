@@ -38,6 +38,24 @@ final class Restaurant_SearchTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
+    func testGourmetSearchLocal() {
+        let expectation = expectation(description: "Gourmet Loaded")
+        let data = Data(jsonSample.utf8)
+        
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let result = try decoder.decode(HPGourmetResults.self, from: data)
+            if result.shops.count == 5 {
+                expectation.fulfill()
+            }
+        } catch {
+            fatalError()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
     func testGourmetSearch() {
         if apiKey == "" { XCTAssertFalse(true); return }
         let urlString = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(apiKey)&lat=34.67&lng=135.52&count=5&format=json"
