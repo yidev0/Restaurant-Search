@@ -15,29 +15,29 @@ struct HPShop: Decodable, Hashable {
     let logoImage: URL
     let open: String
 
-    let photo: HPPhoto
+    let photo: Photo
     
-    struct HPPhoto: Decodable, Hashable {
-        let large: URL
-        let medium: URL
-        let small: URL
+    struct Photo: Decodable, Hashable {
+        let pc: PhotoURL
+        let mobile: PhotoURL?
         
-        private enum PhotoCodingKeys: String, CodingKey {
-            case pc = "pc"
-        }
-        
-        private enum PhotoSizeCodingKeys: String, CodingKey {
-            case large = "l"
-            case medium = "m"
-            case small = "s"
-        }
-        
-        init(from decoder: Decoder) throws {
-            let photoContainer = try decoder.container(keyedBy: PhotoCodingKeys.self)
-            let sizeContainer = try photoContainer.nestedContainer(keyedBy: PhotoSizeCodingKeys.self, forKey: .pc)
-            large = try sizeContainer.decode(URL.self, forKey: .large)
-            medium = try sizeContainer.decode(URL.self, forKey: .medium)
-            small = try sizeContainer.decode(URL.self, forKey: .small)
+        struct PhotoURL: Decodable, Hashable {
+            let large: URL
+            let medium: URL?
+            let small: URL
+            
+            private enum PhotoCodingKeys: String, CodingKey {
+                case large = "l"
+                case medium = "m"
+                case small = "s"
+            }
+            
+            init(from decoder: Decoder) throws {
+                let container = try decoder.container(keyedBy: PhotoCodingKeys.self)
+                large = try container.decode(URL.self, forKey: .large)
+                medium = try container.decodeIfPresent(URL.self, forKey: .medium)
+                small = try container.decode(URL.self, forKey: .small)
+            }
         }
     }
     
