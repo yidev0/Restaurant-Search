@@ -48,9 +48,7 @@ class HPGourmetSearch {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let result = try decoder.decode(HPGourmetResults.self, from: data)
-                    autoreleasepool {
-                        completion(result.shops, error)
-                    }
+                    completion(result.shops, error)
                 } catch {
                     print(error.localizedDescription)
                     completion([], error)

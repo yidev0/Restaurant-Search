@@ -22,6 +22,7 @@ class SearchCollectionViewController: UICollectionViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, HPShop>!
     var locationManager = LocationManager.shared
     var lastUpdatedLocation: CLLocation?
+    var searchRange: Int = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,38 @@ class SearchCollectionViewController: UICollectionViewController {
         configureCollectionView()
         configureDataSource()
         setupLocationManager()
+        setupToolbar()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateLocation), name: Notification.Name("didUpdateLocation"), object: locationManager.currentLocation)
+    }
+    
+    func setupToolbar() {
+        var rangeActions: [UIAction] = []
+        for i in 1...5 {
+            let action = UIAction(
+                title: ["300m", "500m", "1000m", "2000m", "3000m"][i-1]
+            ) { action in
+                if let location = self.locationManager.currentLocation {
+                    self.searchRange = i
+                    self.searchGourmet(at: location)
+                }
+            }
+            action.state = (searchRange == i) ? .on:.off
+            rangeActions.append(action)
+        }
+        let menu = UIMenu(options: .singleSelection, children: rangeActions)
+        
+        let refreshAction = UIAction { action in
+            if let location = self.locationManager.currentLocation {
+                self.searchGourmet(at: location)
+            }
+        }
+        
+        let rangeButton = UIBarButtonItem(title: "Range", menu: menu)
+        let refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise")!, primaryAction: refreshAction)
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        self.setToolbarItems([refreshButton, spacer, rangeButton], animated: true)
+        self.navigationController?.isToolbarHidden = false
     }
     
     func setupLocationManager() {
@@ -79,12 +110,15 @@ class SearchCollectionViewController: UICollectionViewController {
         }
     }
     
-    func searchGourmet(at location: CLLocation) {
+    @objc func searchGourmet(at location: CLLocation) {
         let distanceFromLastSearch = location.distance(from: lastUpdatedLocation ?? .init())
         print(distanceFromLastSearch)
-        if distanceFromLastSearch > 100 { return }
-        gourmetSearch.search(at: location.coordinate) { shops, error in
-            guard let _ = error else { return }
+        if distanceFromLastSearch < 100 {
+            return
+        }
+        
+        gourmetSearch.search(at: location.coordinate, range: searchRange) { shops, error in
+            if error != nil { return }
             var snapshot = NSDiffableDataSourceSnapshot<Section, HPShop>()
             snapshot.appendSections([.main])
             
