@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D19B14112A4EEFE90010F4DB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B14102A4EEFE90010F4DB /* LocationManager.swift */; };
 		D1C189E62A48232600864783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E52A48232600864783 /* AppDelegate.swift */; };
 		D1C189E82A48232600864783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E72A48232600864783 /* SceneDelegate.swift */; };
 		D1C189EA2A48232600864783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E92A48232600864783 /* ViewController.swift */; };
@@ -20,6 +21,8 @@
 		D1C18A192A482E5100864783 /* HPShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A182A482E5100864783 /* HPShop.swift */; };
 		D1C18A1B2A4830E000864783 /* HPGourmetResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A1A2A4830E000864783 /* HPGourmetResults.swift */; };
 		D1C18A1D2A483F7500864783 /* HPGourmetShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A1C2A483F7500864783 /* HPGourmetShop.swift */; };
+		D1D800972A4ADA99002673C5 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D800962A4ADA99002673C5 /* SearchCollectionViewController.swift */; };
+		D1D8009A2A4AE1A3002673C5 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D800992A4AE1A3002673C5 /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D19B14102A4EEFE90010F4DB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D1C189E22A48232600864783 /* Restaurant Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C189E52A48232600864783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C189E72A48232600864783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		D1C18A182A482E5100864783 /* HPShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPShop.swift; sourceTree = "<group>"; };
 		D1C18A1A2A4830E000864783 /* HPGourmetResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPGourmetResults.swift; sourceTree = "<group>"; };
 		D1C18A1C2A483F7500864783 /* HPGourmetShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPGourmetShop.swift; sourceTree = "<group>"; };
+		D1D800962A4ADA99002673C5 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		D1D800992A4AE1A3002673C5 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,8 @@
 				D1C189E72A48232600864783 /* SceneDelegate.swift */,
 				D1C189E92A48232600864783 /* ViewController.swift */,
 				D1C18A152A48244A00864783 /* Model */,
+				D1D800982A4AE195002673C5 /* View */,
+				D1D800952A4ACC94002673C5 /* Controller */,
 				D1C189EB2A48232600864783 /* Main.storyboard */,
 				D1C189EE2A48232700864783 /* Assets.xcassets */,
 				D1C189F02A48232700864783 /* LaunchScreen.storyboard */,
@@ -143,8 +151,25 @@
 				D1C18A1A2A4830E000864783 /* HPGourmetResults.swift */,
 				D1C18A1C2A483F7500864783 /* HPGourmetShop.swift */,
 				D1C18A182A482E5100864783 /* HPShop.swift */,
+				D19B14102A4EEFE90010F4DB /* LocationManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D1D800952A4ACC94002673C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1D800962A4ADA99002673C5 /* SearchCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1D800982A4AE195002673C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1D800992A4AE1A3002673C5 /* SearchCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1D800972A4ADA99002673C5 /* SearchCollectionViewController.swift in Sources */,
 				D1C189EA2A48232600864783 /* ViewController.swift in Sources */,
+				D19B14112A4EEFE90010F4DB /* LocationManager.swift in Sources */,
 				D1C18A192A482E5100864783 /* HPShop.swift in Sources */,
 				D1C189E62A48232600864783 /* AppDelegate.swift in Sources */,
+				D1D8009A2A4AE1A3002673C5 /* SearchCell.swift in Sources */,
 				D1C18A1D2A483F7500864783 /* HPGourmetShop.swift in Sources */,
 				D1C189E82A48232600864783 /* SceneDelegate.swift in Sources */,
 				D1C18A1B2A4830E000864783 /* HPGourmetResults.swift in Sources */,

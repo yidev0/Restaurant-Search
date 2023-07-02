@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HPShop: Decodable {
+struct HPShop: Decodable, Hashable {
     
     var id: String
     var name: String
