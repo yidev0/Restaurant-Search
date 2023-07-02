@@ -79,8 +79,12 @@ class SearchCollectionViewController: UICollectionViewController {
         }
     }
     
-    func searchGourmet(at coordinate: CLLocation) {
-        gourmetSearch.search(at: coordinate.coordinate) { shops, error in
+    func searchGourmet(at location: CLLocation) {
+        let distanceFromLastSearch = location.distance(from: lastUpdatedLocation ?? .init())
+        print(distanceFromLastSearch)
+        if distanceFromLastSearch > 100 { return }
+        gourmetSearch.search(at: location.coordinate) { shops, error in
+            guard let _ = error else { return }
             var snapshot = NSDiffableDataSourceSnapshot<Section, HPShop>()
             snapshot.appendSections([.main])
             
@@ -90,13 +94,14 @@ class SearchCollectionViewController: UICollectionViewController {
             DispatchQueue.main.async {
                 self.dataSource.apply(snapshot, animatingDifferences: false)
             }
+            
+            self.lastUpdatedLocation = location
         }
     }
     
     @objc func didUpdateLocation(_ notification: Notification) {
         if let location = notification.object as? CLLocation {
             searchGourmet(at: location)
-            lastUpdatedLocation = location
         }
     }
     
