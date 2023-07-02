@@ -9,21 +9,22 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController {
 
+    var hpShop: HPShop!
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var hoursLabel: UILabel!
+    @IBOutlet var thumbnailImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupLabels()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupLabels() {
+        self.nameLabel.text = hpShop.name
+        self.addressLabel.text = hpShop.address
+        self.hoursLabel.text = hpShop.open
     }
-    */
 
 }
