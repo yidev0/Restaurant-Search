@@ -27,6 +27,7 @@
 		D1E10D592A51910C002F0F07 /* LocalJsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E10D582A51910C002F0F07 /* LocalJsonTest.swift */; };
 		D1E10D5E2A52AB08002F0F07 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1E10D602A52AB08002F0F07 /* Localizable.strings */; };
 		D1E10D662A52AC09002F0F07 /* String + Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E10D652A52AC09002F0F07 /* String + Localization.swift */; };
+		D1E10D5B2A528397002F0F07 /* SearchInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E10D5A2A528397002F0F07 /* SearchInputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		D1E10D622A52AB12002F0F07 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D1E10D632A52AB12002F0F07 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1E10D652A52AC09002F0F07 /* String + Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localization.swift"; sourceTree = "<group>"; };
+		D1E10D5A2A528397002F0F07 /* SearchInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				D1D800962A4ADA99002673C5 /* SearchCollectionViewController.swift */,
 				D1E10D562A517E91002F0F07 /* RestaurantDetailViewController.swift */,
+				D1E10D5A2A528397002F0F07 /* SearchInputViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				D1D800972A4ADA99002673C5 /* SearchCollectionViewController.swift in Sources */,
 				D1C189EA2A48232600864783 /* ViewController.swift in Sources */,
 				D19B14112A4EEFE90010F4DB /* LocationManager.swift in Sources */,
+				D1E10D5B2A528397002F0F07 /* SearchInputViewController.swift in Sources */,
 				D1C18A192A482E5100864783 /* HPShop.swift in Sources */,
 				D1C189E62A48232600864783 /* AppDelegate.swift in Sources */,
 				D1E10D662A52AC09002F0F07 /* String + Localization.swift in Sources */,
