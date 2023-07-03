@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Restaurant Search
+
+  Created by Yuto on 2023/07/03.
+  
+*/
+
+
+// Search Input
+"Search" = "検索";
+"Range" = "範囲";
+"Latitude" = "緯度";
+"Longitude" = "経度";
+"Address" = "住所";
+"OpenHours" = "営業時間";
+"Refresh" = "更新";
