@@ -26,7 +26,7 @@ class SearchCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Search"
+        self.title = "Search".localize()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.sizeToFit()
         
@@ -65,7 +65,7 @@ class SearchCollectionViewController: UICollectionViewController {
             }
         }
         
-        let rangeButton = UIBarButtonItem(title: "Range", menu: menu)
+        let rangeButton = UIBarButtonItem(title: "Range".localize(), menu: menu)
         let refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise")!, primaryAction: refreshAction)
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         self.setToolbarItems([refreshButton, spacer, rangeButton], animated: true)
