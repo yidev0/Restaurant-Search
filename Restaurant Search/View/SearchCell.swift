@@ -26,6 +26,7 @@ struct SearchCell: View {
                     ProgressView()
                         .progressViewStyle(.circular)
                 }
+                .accessibilityIgnoresInvertColors()
                 Spacer()
             }
             .frame(height: 100)
@@ -40,6 +41,7 @@ struct SearchCell: View {
             
             Spacer()
         }
+        .accessibilityElement(children: .combine)
     }
 }
 

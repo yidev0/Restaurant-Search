@@ -67,6 +67,8 @@ class SearchCollectionViewController: UICollectionViewController {
         
         let rangeButton = UIBarButtonItem(title: "Range".localize(), menu: menu)
         let refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise")!, primaryAction: refreshAction)
+        refreshButton.accessibilityLabel = "Refresh"
+        
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         self.setToolbarItems([refreshButton, spacer, rangeButton], animated: true)
         self.navigationController?.isToolbarHidden = false
