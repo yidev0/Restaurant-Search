@@ -13,6 +13,7 @@ class RestaurantDetailViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var accessLabel: UILabel!
     @IBOutlet var hoursLabel: UILabel!
     @IBOutlet var thumbnailImage: UIImageView!
     
@@ -28,8 +29,12 @@ class RestaurantDetailViewController: UIViewController {
         self.nameLabel.numberOfLines = 0
         
         self.addressLabel.text = hpShop.address
-        self.addressLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        self.addressLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         self.addressLabel.numberOfLines = 0
+        
+        self.accessLabel.text = hpShop.access
+        self.accessLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        self.accessLabel.numberOfLines = 0
         
         self.hoursLabel.text = hpShop.open
         self.hoursLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
