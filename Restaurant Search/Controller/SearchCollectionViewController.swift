@@ -74,7 +74,7 @@ class SearchCollectionViewController: UICollectionViewController {
         dataSource = UICollectionViewDiffableDataSource<Section, HPShop>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
             cell.contentConfiguration = UIHostingConfiguration {
-                SearchCell(title: item.name, detail: item.address, imageURL: item.photo.mobile?.large)
+                SearchCell(title: item.name, detail: item.mobileAccess, imageURL: item.photo.mobile?.large)
             }
             
             return cell
