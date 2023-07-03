@@ -40,6 +40,7 @@ struct SearchCell: View {
             
             Spacer()
         }
+        .accessibilityElement(children: .combine)
     }
 }
 
