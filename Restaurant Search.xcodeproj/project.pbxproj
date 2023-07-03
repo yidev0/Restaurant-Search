@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D19B14112A4EEFE90010F4DB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19B14102A4EEFE90010F4DB /* LocationManager.swift */; };
 		D1C189E62A48232600864783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E52A48232600864783 /* AppDelegate.swift */; };
 		D1C189E82A48232600864783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E72A48232600864783 /* SceneDelegate.swift */; };
 		D1C189EA2A48232600864783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189E92A48232600864783 /* ViewController.swift */; };
@@ -16,6 +17,17 @@
 		D1C189FD2A48232700864783 /* Restaurant_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C189FC2A48232700864783 /* Restaurant_SearchTests.swift */; };
 		D1C18A072A48232700864783 /* Restaurant_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A062A48232700864783 /* Restaurant_SearchUITests.swift */; };
 		D1C18A092A48232700864783 /* Restaurant_SearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A082A48232700864783 /* Restaurant_SearchUITestsLaunchTests.swift */; };
+		D1C18A172A48271700864783 /* HPGourmetSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A162A48271700864783 /* HPGourmetSearch.swift */; };
+		D1C18A192A482E5100864783 /* HPShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A182A482E5100864783 /* HPShop.swift */; };
+		D1C18A1B2A4830E000864783 /* HPGourmetResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A1A2A4830E000864783 /* HPGourmetResults.swift */; };
+		D1C18A1D2A483F7500864783 /* HPGourmetShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C18A1C2A483F7500864783 /* HPGourmetShop.swift */; };
+		D1D800972A4ADA99002673C5 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D800962A4ADA99002673C5 /* SearchCollectionViewController.swift */; };
+		D1D8009A2A4AE1A3002673C5 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D800992A4AE1A3002673C5 /* SearchCell.swift */; };
+		D1E10D572A517E91002F0F07 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E10D562A517E91002F0F07 /* RestaurantDetailViewController.swift */; };
+		D1E10D592A51910C002F0F07 /* LocalJsonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E10D582A51910C002F0F07 /* LocalJsonTest.swift */; };
+		D1E10D5E2A52AB08002F0F07 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1E10D602A52AB08002F0F07 /* Localizable.strings */; };
+		D1E10D662A52AC09002F0F07 /* String + Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E10D652A52AC09002F0F07 /* String + Localization.swift */; };
+		D1E10D5B2A528397002F0F07 /* SearchInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E10D5A2A528397002F0F07 /* SearchInputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D19B14102A4EEFE90010F4DB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D1C189E22A48232600864783 /* Restaurant Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C189E52A48232600864783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C189E72A48232600864783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +62,20 @@
 		D1C18A022A48232700864783 /* Restaurant SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Restaurant SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C18A062A48232700864783 /* Restaurant_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant_SearchUITests.swift; sourceTree = "<group>"; };
 		D1C18A082A48232700864783 /* Restaurant_SearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant_SearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D1C18A162A48271700864783 /* HPGourmetSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPGourmetSearch.swift; sourceTree = "<group>"; };
+		D1C18A182A482E5100864783 /* HPShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPShop.swift; sourceTree = "<group>"; };
+		D1C18A1A2A4830E000864783 /* HPGourmetResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPGourmetResults.swift; sourceTree = "<group>"; };
+		D1C18A1C2A483F7500864783 /* HPGourmetShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPGourmetShop.swift; sourceTree = "<group>"; };
+		D1D800962A4ADA99002673C5 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		D1D800992A4AE1A3002673C5 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		D1E10D562A517E91002F0F07 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		D1E10D582A51910C002F0F07 /* LocalJsonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJsonTest.swift; sourceTree = "<group>"; };
+		D1E10D5F2A52AB08002F0F07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D1E10D612A52AB12002F0F07 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		D1E10D622A52AB12002F0F07 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D1E10D632A52AB12002F0F07 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D1E10D652A52AC09002F0F07 /* String + Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localization.swift"; sourceTree = "<group>"; };
+		D1E10D5A2A528397002F0F07 /* SearchInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +129,15 @@
 				D1C189E52A48232600864783 /* AppDelegate.swift */,
 				D1C189E72A48232600864783 /* SceneDelegate.swift */,
 				D1C189E92A48232600864783 /* ViewController.swift */,
+				D1E10D642A52ABF2002F0F07 /* Extension */,
+				D1C18A152A48244A00864783 /* Model */,
+				D1D800982A4AE195002673C5 /* View */,
+				D1D800952A4ACC94002673C5 /* Controller */,
 				D1C189EB2A48232600864783 /* Main.storyboard */,
 				D1C189EE2A48232700864783 /* Assets.xcassets */,
 				D1C189F02A48232700864783 /* LaunchScreen.storyboard */,
 				D1C189F32A48232700864783 /* Info.plist */,
+				D1E10D602A52AB08002F0F07 /* Localizable.strings */,
 			);
 			path = "Restaurant Search";
 			sourceTree = "<group>";
@@ -114,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D1C189FC2A48232700864783 /* Restaurant_SearchTests.swift */,
+				D1E10D582A51910C002F0F07 /* LocalJsonTest.swift */,
 			);
 			path = "Restaurant SearchTests";
 			sourceTree = "<group>";
@@ -125,6 +158,44 @@
 				D1C18A082A48232700864783 /* Restaurant_SearchUITestsLaunchTests.swift */,
 			);
 			path = "Restaurant SearchUITests";
+			sourceTree = "<group>";
+		};
+		D1C18A152A48244A00864783 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1C18A162A48271700864783 /* HPGourmetSearch.swift */,
+				D1C18A1A2A4830E000864783 /* HPGourmetResults.swift */,
+				D1C18A1C2A483F7500864783 /* HPGourmetShop.swift */,
+				D1C18A182A482E5100864783 /* HPShop.swift */,
+				D19B14102A4EEFE90010F4DB /* LocationManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1D800952A4ACC94002673C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1D800962A4ADA99002673C5 /* SearchCollectionViewController.swift */,
+				D1E10D562A517E91002F0F07 /* RestaurantDetailViewController.swift */,
+				D1E10D5A2A528397002F0F07 /* SearchInputViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1D800982A4AE195002673C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1D800992A4AE1A3002673C5 /* SearchCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1E10D642A52ABF2002F0F07 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D1E10D652A52AC09002F0F07 /* String + Localization.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +284,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = D1C189D92A48232600864783;
 			productRefGroup = D1C189E32A48232600864783 /* Products */;
@@ -232,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C189F22A48232700864783 /* LaunchScreen.storyboard in Resources */,
+				D1E10D5E2A52AB08002F0F07 /* Localizable.strings in Resources */,
 				D1C189EF2A48232700864783 /* Assets.xcassets in Resources */,
 				D1C189ED2A48232600864783 /* Main.storyboard in Resources */,
 			);
@@ -258,9 +331,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1D800972A4ADA99002673C5 /* SearchCollectionViewController.swift in Sources */,
 				D1C189EA2A48232600864783 /* ViewController.swift in Sources */,
+				D19B14112A4EEFE90010F4DB /* LocationManager.swift in Sources */,
+				D1E10D5B2A528397002F0F07 /* SearchInputViewController.swift in Sources */,
+				D1C18A192A482E5100864783 /* HPShop.swift in Sources */,
 				D1C189E62A48232600864783 /* AppDelegate.swift in Sources */,
+				D1E10D662A52AC09002F0F07 /* String + Localization.swift in Sources */,
+				D1D8009A2A4AE1A3002673C5 /* SearchCell.swift in Sources */,
+				D1E10D572A517E91002F0F07 /* RestaurantDetailViewController.swift in Sources */,
+				D1C18A1D2A483F7500864783 /* HPGourmetShop.swift in Sources */,
 				D1C189E82A48232600864783 /* SceneDelegate.swift in Sources */,
+				D1C18A1B2A4830E000864783 /* HPGourmetResults.swift in Sources */,
+				D1C18A172A48271700864783 /* HPGourmetSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C189FD2A48232700864783 /* Restaurant_SearchTests.swift in Sources */,
+				D1E10D592A51910C002F0F07 /* LocalJsonTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +385,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1C189EC2A48232600864783 /* Base */,
+				D1E10D612A52AB12002F0F07 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -309,8 +394,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1C189F12A48232700864783 /* Base */,
+				D1E10D622A52AB12002F0F07 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D1E10D602A52AB08002F0F07 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1E10D5F2A52AB08002F0F07 /* en */,
+				D1E10D632A52AB12002F0F07 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -320,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -380,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
