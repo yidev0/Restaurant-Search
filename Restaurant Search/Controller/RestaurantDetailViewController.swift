@@ -50,6 +50,8 @@ class RestaurantDetailViewController: UIViewController {
     
     func setupImage() {
         thumbnailImage.isAccessibilityElement = false
+        thumbnailImage.accessibilityIgnoresInvertColors = true
+        
         if let url = hpShop.photo.mobile?.large {
             let request = URLRequest(url: url)
             URLSession.shared.dataTask(with: request) { data, response, error in
