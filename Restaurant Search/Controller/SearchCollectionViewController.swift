@@ -35,6 +35,7 @@ class SearchCollectionViewController: UICollectionViewController {
     }
     
     func initializeView() {
+        collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         configureCollectionView()
         configureDataSource()
         
@@ -71,12 +72,12 @@ class SearchCollectionViewController: UICollectionViewController {
     }
     
     func configureDataSource() {
+        collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         dataSource = UICollectionViewDiffableDataSource<Section, HPShop>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-            cell.contentConfiguration = UIHostingConfiguration {
-                SearchCell(title: item.name, detail: item.mobileAccess, imageURL: item.photo.mobile?.large)
-            }
-            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SearchCollectionViewCell
+            cell.titleLabel.text = item.name
+            cell.detailLabel.text = item.mobileAccess
+            cell.loadImage(of: item.photo.mobile?.large)
             return cell
         }
     }
