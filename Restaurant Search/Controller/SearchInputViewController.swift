@@ -27,6 +27,9 @@ class SearchInputViewController: UIViewController {
         setupLabel()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateLocation), name: Notification.Name("didUpdateLocation"), object: locationManager.currentLocation)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         locationManager.startUpdatingLocation()
     }
     
@@ -75,6 +78,17 @@ class SearchInputViewController: UIViewController {
         
         if let url = URL(string: urlString) {
             performSegue(withIdentifier: "toResult", sender: url)
+        }
+    }
+        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResult" {
+            if let destination = segue.destination as? SearchCollectionViewController,
+               let currentLocation = locationManager.currentLocation {
+                destination.searchRange = selectedRange
+                destination.lastUpdatedLocation = currentLocation
+                locationManager.stopUpdatingLocation()
+            }
         }
     }
     

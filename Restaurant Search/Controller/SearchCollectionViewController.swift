@@ -21,7 +21,7 @@ class SearchCollectionViewController: UICollectionViewController {
     private var gourmetSearch = HPGourmetSearch()
     var dataSource: UICollectionViewDiffableDataSource<Section, HPShop>!
     var locationManager = LocationManager.shared
-    var lastUpdatedLocation: CLLocation?
+    var lastUpdatedLocation: CLLocation!
     var searchRange: Int = 3
     
     override func viewDidLoad() {
@@ -37,10 +37,9 @@ class SearchCollectionViewController: UICollectionViewController {
     func initializeView() {
         configureCollectionView()
         configureDataSource()
-        setupLocationManager()
         setupToolbar()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateLocation), name: Notification.Name("didUpdateLocation"), object: locationManager.currentLocation)
+        searchGourmet(at: lastUpdatedLocation)
     }
     
     func setupToolbar() {
@@ -70,10 +69,6 @@ class SearchCollectionViewController: UICollectionViewController {
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         self.setToolbarItems([refreshButton, spacer, rangeButton], animated: true)
         self.navigationController?.isToolbarHidden = false
-    }
-    
-    func setupLocationManager() {
-        locationManager.startUpdatingLocation()
     }
     
     func configureCollectionView() {
@@ -111,12 +106,6 @@ class SearchCollectionViewController: UICollectionViewController {
     }
     
     @objc func searchGourmet(at location: CLLocation) {
-        let distanceFromLastSearch = location.distance(from: lastUpdatedLocation ?? .init())
-        print(distanceFromLastSearch)
-        if distanceFromLastSearch < 100 {
-            return
-        }
-        
         gourmetSearch.search(at: location.coordinate, range: searchRange) { shops, error in
             if error != nil { return }
             var snapshot = NSDiffableDataSourceSnapshot<Section, HPShop>()
@@ -128,8 +117,6 @@ class SearchCollectionViewController: UICollectionViewController {
             DispatchQueue.main.async {
                 self.dataSource.apply(snapshot, animatingDifferences: false)
             }
-            
-            self.lastUpdatedLocation = location
         }
     }
     
