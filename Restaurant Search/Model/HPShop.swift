@@ -14,7 +14,11 @@ struct HPShop: Decodable, Hashable {
     let address: String
     let logoImage: URL
     let open: String
-
+    let access: String
+    let mobileAccess: String
+    let latitude: Double
+    let longitude: Double
+    
     let photo: Photo
     
     struct Photo: Decodable, Hashable {
@@ -48,6 +52,10 @@ struct HPShop: Decodable, Hashable {
         case logoImage = "logoImage"
         case open = "open"
         case photo
+        case access
+        case mobileAccess
+        case latitude = "lat"
+        case longitude = "lng"
     }
     
 }
