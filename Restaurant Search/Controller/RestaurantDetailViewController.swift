@@ -13,6 +13,7 @@ class RestaurantDetailViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var accessLabel: UILabel!
     @IBOutlet var hoursLabel: UILabel!
     @IBOutlet var thumbnailImage: UIImageView!
     
@@ -28,16 +29,27 @@ class RestaurantDetailViewController: UIViewController {
         self.nameLabel.numberOfLines = 0
         
         self.addressLabel.text = hpShop.address
-        self.addressLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        self.addressLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         self.addressLabel.numberOfLines = 0
+        self.addressLabel.accessibilityLabel = "Address".localize()
+        self.addressLabel.accessibilityValue = hpShop.address
+        
+        self.accessLabel.text = hpShop.access
+        self.accessLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        self.accessLabel.numberOfLines = 0
+        self.accessLabel.accessibilityLabel = "Access".localize()
+        self.accessLabel.accessibilityValue = hpShop.access
         
         self.hoursLabel.text = hpShop.open
         self.hoursLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         self.hoursLabel.textColor = UIColor.secondaryLabel
         self.hoursLabel.numberOfLines = 0
+        self.hoursLabel.accessibilityLabel = "OpenHours".localize()
+        self.hoursLabel.accessibilityValue = hpShop.open
     }
     
     func setupImage() {
+        thumbnailImage.isAccessibilityElement = false
         if let url = hpShop.photo.mobile?.large {
             let request = URLRequest(url: url)
             URLSession.shared.dataTask(with: request) { data, response, error in
