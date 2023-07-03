@@ -26,7 +26,7 @@ class SearchCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Search"
+        self.title = "Search".localize()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.sizeToFit()
         

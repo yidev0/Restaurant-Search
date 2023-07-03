@@ -46,17 +46,17 @@ class SearchInputViewController: UIViewController {
     }
     
     func setupButton() {
-        searchButton.setTitle("Search", for: .normal)
+        searchButton.setTitle("Search".localize(), for: .normal)
     }
     
     func setupLabel() {
         for i in 0..<2 {
-            coordinateLabels[i].text = ["Latitude", "Longitude"][i]
+            coordinateLabels[i].text = ["Latitude", "Longitude"][i].localize()
             if let coordinate = locationManager.currentLocation?.coordinate {
                 coordinateValueLabels[i].text = "\([coordinate.latitude, coordinate.longitude][i])"
             }
         }
-        rangeLabel.text = "Range"
+        rangeLabel.text = "Range".localize()
     }
     
     @objc func didUpdateLocation(_ notification: Notification) {
