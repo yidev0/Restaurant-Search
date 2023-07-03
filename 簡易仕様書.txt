@@ -52,6 +52,8 @@ https://github.com/yidev0/Restaurant-Search
 
 ### 作成（完成）できなかった機能
 * UISearchControllerを使った店舗のフィルタリング、検索条件外の検索
+* 店舗の緯度経度から、詳細画面にMapViewを表示する
+* UICollectionViewCellのUIKitでの実装（hotfixブランチ内で途中まで実装済み）
 
 ### 使用しているAPI,SDK,ライブラリなど
 * ホットペッパーグルメサーチAPI
